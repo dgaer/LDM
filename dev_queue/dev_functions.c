@@ -136,8 +136,8 @@ int write_ldm_queue(char *ldm_queue_path)
   while(cont_loop) {
     FD_ZERO(&readfds);
     FD_SET(pq_fd, &readfds);
-    timeo.tv_sec = 1;
-    timeo.tv_usec = 0;
+    timeo.tv_sec = 0;
+    timeo.tv_usec = 1;
     ready = select(pq_fd, &readfds, 0, 0, &timeo);
     
     // Select code for I/O wait to avoid using 100% of CPU in while loop

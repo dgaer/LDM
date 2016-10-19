@@ -32,7 +32,7 @@ for LDM product groups.
 #include "dev_queue.h"
 
 // Program information
-static const char version_string[] = "2.03";
+static const char version_string[] = "2.04";
 static const char produced_by[] = "Douglas.Gaer@noaa.gov";
 
 #if defined (_LDAD_)

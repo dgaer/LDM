@@ -6,9 +6,9 @@
 /* C Compiler Used: GNU, Intel */
 /* Produced By: Douglas.Gaer@noaa.gov */
 /* File Creation Date: 04/01/2011 */
-/* Date Last Modified: 07/21/2016 */
+/* Date Last Modified: 09/22/2016 */
 /* - */
-/* Version control: 2.03 */
+/* Version control: 2.04 */
 /* Support Team: */
 /* Contributors: */
 /* ----------------------------------------------------------- */
@@ -258,8 +258,8 @@ void watch_queue(pqueue *pq, prod_class  *clssp)
   while(keep_at_it) {
     FD_ZERO(&readfds);
     FD_SET(ifd, &readfds);
-    timeo.tv_sec = 1;
-    timeo.tv_usec = 0;
+    timeo.tv_sec = 0;
+    timeo.tv_usec = 100;
     ready = select(width, &readfds, 0, 0, &timeo);
     
     if (ready < 0) {
